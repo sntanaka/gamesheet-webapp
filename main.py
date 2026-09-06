@@ -22,9 +22,9 @@ async def generate_excel(
             tmpC.write(await check.read())
 
         # Excelファイルを読み込む
-        wbA = openpyxl.load_workbook(tmpA.name)
-        wbB = openpyxl.load_workbook(tmpB.name)
-        wbC = openpyxl.load_workbook(tmpC.name)
+        wbA = openpyxl.load_workbook(tmpA.name, read_only=True)
+        wbB = openpyxl.load_workbook(tmpB.name, read_only=True)
+        wbC = openpyxl.load_workbook(tmpC.name, read_only=True)
 
         # ここにあなたの処理ロジックを追加
         # 例: wbC に wbA と wbB のデータを統合するなど
